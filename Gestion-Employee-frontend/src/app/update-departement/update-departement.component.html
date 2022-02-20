@@ -1,0 +1,24 @@
+
+<div class="row justify-content-sm-center pt-5">
+  <div class="col-sm-6 shadow round pb-3">
+    <h1 class="text-center pt-3 "> Update Departement</h1>
+    <form (ngSubmit) = "onSubmit()">
+
+      <div class="form-group">
+        <label> Name</label>
+        <input type="text" class ="form-control" id = "name"
+               [(ngModel)] = "departement.departement_Name" name = "name"/>
+      </div>
+
+
+      <br/>
+      <div class="form-group text-center">
+        <button class = "btn btn-success" type ="submit">Submit</button>
+        &nbsp;
+        <button type="reset" class="btn btn-secondary">Reset</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+

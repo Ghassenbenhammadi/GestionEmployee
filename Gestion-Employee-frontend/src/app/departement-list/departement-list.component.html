@@ -1,0 +1,29 @@
+
+<div> <h2 class="text-center text-decoration-underline"> <em>Departement List </em></h2>
+  <input type="text" (input)=" Search($any($event.target).value)"/>
+  <br><br>
+  <table class="table table-striped display table-bordered table-hover  " id="table_id">
+    <thead>
+    <tr class="text-center">
+      <th> id</th>
+      <th> Name</th>
+      <th> Action </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="text-center" *ngFor="let d of departements | paginate: { itemsPerPage: 5, currentPage: page }">
+      <td>{{d.id}}</td>
+      <td>{{d.departement_Name}}</td>
+
+
+
+      <td> <button (click) = "updateDepartement(d.id)" class = "btn btn-warning"> Update</button>
+      <button (click) = "deleteDepartement(d.id)" class = "btn btn-danger" style="margin-left: 10px">Delete</button> </td>
+    </tr>
+    </tbody>
+
+  </table>
+  <pagination-controls    (pageChange)="page = $event "></pagination-controls>
+</div>
+
